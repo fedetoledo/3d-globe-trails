@@ -1,7 +1,6 @@
 import { Scene } from 'three';
 import Experience from '../Experience.js';
 import Resources from '../Utils/Resources.js';
-import Cube from './Cube.js';
 import Globe from './Globe';
 
 export default class World {
@@ -9,7 +8,6 @@ export default class World {
   scene: Scene;
   resources: Resources;
   globe: Globe;
-  cube: Cube;
   constructor() {
     this.experience = new Experience();
     this.scene = this.experience.scene;
