@@ -16,5 +16,5 @@
     "skipLibCheck": true,
     "strictPropertyInitialization": false
   },
-  "include": ["src", "static"]
+  "include": ["src", "public/static"]
 }
