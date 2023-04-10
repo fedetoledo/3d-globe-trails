@@ -67,7 +67,6 @@ export default class Globe {
     };
 
     this.generateImpacts();
-    // this.makeGlobeOfPoints();
 
     // Debug
     if (this.debug.active) {
@@ -232,7 +231,7 @@ export default class Globe {
             .onUpdate((val) => {
               this.uniforms.impacts.value[i].impactRatio = val.value;
             })
-            .onComplete((val) => {
+            .onComplete(() => {
               this.impacts[i].prevPosition.copy(this.impacts[i].impactPosition);
               this.impacts[i].impactPosition
                 .random()
@@ -324,8 +323,6 @@ export default class Globe {
     let cycle = cycles ?? 1;
     let peak = peakHeight || 1;
 
-    let points = [];
-
     let radius = startPoint.length();
     let angle = startPoint.angleTo(endPoint);
 
@@ -351,7 +348,7 @@ export default class Globe {
     tri.getNormal(nrm);
 
     // rotate startPoint around normal
-    let angleStep = angle / division;
+    // let angleStep = angle / division;
     let v3Major = new THREE.Vector3();
     let v3Minor = new THREE.Vector3();
     let v3Inter = new THREE.Vector3();
