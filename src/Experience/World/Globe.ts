@@ -170,7 +170,7 @@ export default class Globe {
                 bool circ = length(gl_PointCoord - 0.5) > .5; // make points round
                 bool vis = dot(vMvPosition, vNormal) < 0.; // visible only on the front side of the sphere
 
-                if (circ) discard;
+                if (circ || vVisibility > 0.5) discard;
 
                 vec3 col = diffuse; // + (vVisibility > 0.5 ? 1.0 : .0); // make oceans brighter
 
